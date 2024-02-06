@@ -283,13 +283,9 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
-            lol.edit_text("💛")
-            time.sleep(0.5)
-            lol.edit_text("🤍")
+            lol.edit_text("🎊")
             time.sleep(0.3)
-            lol.edit_text("❤️")
-            time.sleep(0.4)
-            lol.delete()
+            lol.edit_text("⚡️")
             
             update.effective_message.reply_photo(random.choice(NYKAA),PM_START_TEXT.format(escape_markdown(first_name),BOT_NAME,sql.num_users(),sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
