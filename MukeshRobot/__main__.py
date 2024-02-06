@@ -76,21 +76,21 @@ PM_START_TEX = """
 
 
 PM_START_TEXT = """ 
-*❍ ʜᴇʏ {}, ᴡᴇʟᴄᴏᴍᴇ ʙᴀʙʏ* !\n━━━━━━━━━━━━━━━━━━━━━━\n\n❍ *ɪ ᴀᴍ {}, ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.*\n\n❍ *ᴜsᴇʀs ➛ {}*\n❍ *ᴄʜᴀᴛs ➛ {}*\n\n❍ *ɪ ʜᴀᴠᴇ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs.*"""
+*нєу {}, 💝* !\n\nɪ'ᴍ 𝐘𝐮𝐦𝐞𝐤𝐨 π 𝐉𝐚𝐛𝐚𝐦𝐢 !\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯/nɪ'ᴍ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴏᴍᴇ ᴄᴏᴏʟ ғᴇᴀᴛᴜʀᴇs ʟɪᴋᴇ:/n/n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯/n・ᴘʜ-ʟᴏɢᴏ ᴍᴀᴋᴇʀ./n・ꜱᴘᴀᴍ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ./n・ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ./n・ɢᴀᴍᴇs./n・ᴀɪ ᴄʜᴀᴛʙᴏᴛ./n/n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯/n*"""
 
 buttons = [
     [
         InlineKeyboardButton(
-            text=" ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ", 
+            text=" ⚡️𝙃𝙄𝙅𝘼𝘾𝙆 𝙈𝙀⚡️ ", 
             url=f"https://t.me/{dispatcher.bot.username}?startgroup=true", 
         ),
     ],
     [
-        InlineKeyboardButton(text="ʀᴇᴘᴏ", callback_data="gib_source"),
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ", callback_data="mukesh_"),
+        InlineKeyboardButton(text="⛩𝘼𝘽𝙄𝙇𝙄𝙏𝙄𝙀𝙎⛩", callback_data="Main_help"),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs", callback_data="Main_help"),
+        InlineKeyboardButton(text="🎵𝙈𝙐𝙎𝙄𝘾🎵", callback_data="Main_help"),
+        InlineKeyboardButton(text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
      
 ]
