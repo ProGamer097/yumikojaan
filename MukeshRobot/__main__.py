@@ -71,12 +71,11 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 PM_START_TEX = """
-❍ ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \n❍ ʟᴏᴠᴇ ʏᴏᴜ ʙᴀʙʏ... 
+❍ ʜᴇʟʟᴏ `{}`, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \n any help bro... 
 """
 
-
 PM_START_TEXT = """ 
-*нєу {}, ᴡᴇʟᴄᴏᴍᴇ ʙᴀʙʏ* !\n━━━━━━━━━━━━━━━━━━━━━━\n\n❍ *ɪ ᴀᴍ {}, ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.*\n❍ *ɪ ʜᴀᴠᴇ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs.*"""
+*нєу {}, welcome bro* !\n━━━━━━━━━━━━━━━━━━━━━━\n\n❍ *ɪ ᴀᴍ {}, ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.*\n❍ *ɪ ʜᴀᴠᴇ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs.*"""
 
 buttons = [
         
@@ -105,14 +104,14 @@ HELP_STRINGS = f"""
 ❍ *{BOT_NAME}  ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄs ᴄᴏᴍᴍᴀɴᴅ*"""
 
 ABHI = [
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-"https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
+"https://telegra.ph/file/84ca7a2785fed5586bf0e.jpg",
+"https://telegra.ph/file/4c3d6f66d8f665a3828c8.jpg",
+"https://telegra.ph/file/a1db25822e55b36762610.jpg",
+"https://telegra.ph/file/fdf6613e49b15e2f603fd.jpg",
+"https://telegra.ph/file/cabe388349a857cfac208.jpg",
+"https://telegra.ph/file/c6c311a6994e843c00f8b.jpg",
+"https://telegra.ph/file/c6c311a6994e843c00f8b.jpg",
+"https://telegra.ph/file/e5b31ab148c5eca8e4c0e.jpg",
 "https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
 "https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
 "https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
@@ -138,8 +137,8 @@ ABHI = [
 ]
 
 NYKAA = [
-    "https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",
-    "https://telegra.ph/file/b3a548d974cfe8d3d9fa8.jpg",    
+    "https://telegra.ph/file/e5b31ab148c5eca8e4c0e.jpg",
+    "https://telegra.ph/file/c6c311a6994e843c00f8b.jpg",    
 ]
 
 
@@ -247,9 +246,9 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
-            lol.edit_text("🥶")
+            lol.edit_text("🌚")
             time.sleep(0.5)
-            lol.edit_text("🥵")
+            lol.edit_text("💸")
             time.sleep(0.3)
             lol.edit_text("🤡")
             time.sleep(0.4)
@@ -750,7 +749,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "Music_roy_admin":
         query.message.edit_caption(f"*✿ ꜱᴘᴀᴍ  ᴄᴏᴍᴍᴀɴᴅꜱ ✿*"
-            f"""\n\n֍ 𝗦𝗽𝗮𝗺 ➠ ๏ ꜱᴘᴀᴍꜱ ᴀ ᴍᴇꜱꜱᴀɢᴇ. ๏\n  ๛ /spam <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)\n  ๛ /spam <count> <replying any message>\n\n֍ 𝗣𝗼𝗿𝗻𝗦𝗽𝗮𝗺 ➠ ๏ ᴘᴏʀᴍᴏɢʀᴀᴘʜʏ ꜱᴘᴀᴍ. ๏\n  ๛ /pspam <count>\n\n֍ 𝗛𝗮𝗻𝗴 ➠ ๏ ꜱᴘᴀᴍꜱ ʜᴀɴɢɪɴɢ ᴍᴇꜱꜱᴀɢᴇ ꜰᴏʀ ɢɪᴠᴇɴ ᴄᴏᴜɴᴛᴇʀ.""",
+            f"""\n\n֍ soja ➠ ๏ ꜱᴘᴀᴍꜱ ᴀ ᴍᴇꜱꜱᴀɢᴇ. ๏\n  ๛ /spam <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)\n  ๛ /spam <count> <replying any message>\n\n֍ 𝗣𝗼𝗿𝗻𝗦𝗽𝗮𝗺 ➠ ๏ ᴘᴏʀᴍᴏɢʀᴀᴘʜʏ ꜱᴘᴀᴍ. ๏\n  ๛ /pspam <count>\n\n֍ 𝗛𝗮𝗻𝗴 ➠ ๏ ꜱᴘᴀᴍꜱ ʜᴀɴɢɪɴɢ ᴍᴇꜱꜱᴀɢᴇ ꜰᴏʀ ɢɪᴠᴇɴ ᴄᴏᴜɴᴛᴇʀ.""",
             parse_mode=ParseMode.MARKDOWN,
             
             reply_markup=InlineKeyboardMarkup(
@@ -763,7 +762,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "Music_roy_play":
         query.message.edit_caption(f"*✿ ʀᴀɪᴅ ᴄᴏᴍᴍᴀɴᴅꜱ ✿*"
-            f"""\n\n֍ 𝗥𝗮𝗶𝗱 ➠ ๏ ᴀᴄᴛɪᴠᴀᴛᴇꜱ ʀᴀɪᴅ ᴏɴ ᴀɴʏ ɪɴᴅɪᴠɪᴅᴜᴀʟ ᴜꜱᴇʀ ꜰᴏʀ ɢɪᴠᴇɴ ʀᴀɴɢᴇ. ๏\n  ๛ /raid <count> <username>\n  ๛ /raid <count> <reply to user>\n\n֍ 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱 ➠ ๏ ᴀᴄᴛɪᴠᴀᴛᴇꜱ ʀᴇᴘʟʏ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /rraid <replying to user>\n  ๛ /rraid <username>\n\n֍ 𝗗𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱 ➠ ๏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇꜱ ʀᴇᴘʟʏ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /drraid <replying to user>\n  ๛ /drraid <username>\n\n֍ 𝐌𝐑𝐚𝐢𝐝 ➠ ๏ ʟᴏᴠᴇ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /mraid <count> <username>\n  ๛ /mraid <count> <reply to user>\n\n֍ 𝐒𝐑𝐚𝐢𝐝 ➠ ๏ ꜱʜᴀʏᴀʀɪ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /sraid <count> <username>\n  ๛ /sraid <count> <reply to user>\n\n֍ 𝐂𝐑𝐚𝐢𝐝 ➠ ๏ ᴀʙᴄᴅ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /craid <count> <username>\n  ๛ /craid <count> <reply to user>""",
+            f"""\n\n֍ soja ➠ ๏ ᴀᴄᴛɪᴠᴀᴛᴇꜱ ʀᴀɪᴅ ᴏɴ ᴀɴʏ ɪɴᴅɪᴠɪᴅᴜᴀʟ ᴜꜱᴇʀ ꜰᴏʀ ɢɪᴠᴇɴ ʀᴀɴɢᴇ. ๏\n  ๛ /raid <count> <username>\n  ๛ /raid <count> <reply to user>\n\n֍ 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱 ➠ ๏ ᴀᴄᴛɪᴠᴀᴛᴇꜱ ʀᴇᴘʟʏ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /rraid <replying to user>\n  ๛ /rraid <username>\n\n֍ 𝗗𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱 ➠ ๏ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇꜱ ʀᴇᴘʟʏ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /drraid <replying to user>\n  ๛ /drraid <username>\n\n֍ 𝐌𝐑𝐚𝐢𝐝 ➠ ๏ ʟᴏᴠᴇ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /mraid <count> <username>\n  ๛ /mraid <count> <reply to user>\n\n֍ 𝐒𝐑𝐚𝐢𝐝 ➠ ๏ ꜱʜᴀʏᴀʀɪ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /sraid <count> <username>\n  ๛ /sraid <count> <reply to user>\n\n֍ 𝐂𝐑𝐚𝐢𝐝 ➠ ๏ ᴀʙᴄᴅ ʀᴀɪᴅ ᴏɴ ᴛʜᴇ ᴜꜱᴇʀ. ๏\n  ๛ /craid <count> <username>\n  ๛ /craid <count> <reply to user>""",
             parse_mode=ParseMode.MARKDOWN,
             
             reply_markup=InlineKeyboardMarkup(
@@ -777,7 +776,7 @@ def Music_about_callback(update: Update, context: CallbackContext):
     elif query.data == "Music_roy_bot":
         query.message.edit_caption(f"*✿ ʙᴏᴛ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ ✿*"
            
-            f"""\n\n֍ 𝗨𝘀𝗲𝗿𝗕𝗼𝘁 ➠ ๏ ᴜꜱᴇʀʙᴏᴛ ᴄᴍᴅꜱ ๏\n  ๛ /ping \n  ๛ /reboot\n  ๛ /sudo <reply to user>  ➛ Owner Cmd\n  ๛ /logs ➛ Owner Cmd\n\n֍ 𝗘𝗰𝗵𝗼 ➠ ๏ ᴛᴏ ᴀᴄᴛɪᴠᴇ ᴇᴄʜᴏ ᴏɴ ᴀɴʏ ᴜꜱᴇʀ ๏\n  ๛ /echo <reply to user>\n  ๛ /rmecho <reply to user>\n\n֍ 𝗟𝗲𝗮𝘃𝗲 ➠ ๏ ᴛᴏ ʟᴇᴀᴠᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ๏\n  ๛ /leave <group/chat id>\n  ๛ /leave ➛ Type in the Group bot will auto leave that group""",
+            f"""\n\n֍ soja ➠ ๏ ᴜꜱᴇʀʙᴏᴛ ᴄᴍᴅꜱ ๏\n  ๛ /ping \n  ๛ /reboot\n  ๛ /sudo <reply to user>  ➛ Owner Cmd\n  ๛ /logs ➛ Owner Cmd\n\n֍ 𝗘𝗰𝗵𝗼 ➠ ๏ ᴛᴏ ᴀᴄᴛɪᴠᴇ ᴇᴄʜᴏ ᴏɴ ᴀɴʏ ᴜꜱᴇʀ ๏\n  ๛ /echo <reply to user>\n  ๛ /rmecho <reply to user>\n\n֍ 𝗟𝗲𝗮𝘃𝗲 ➠ ๏ ᴛᴏ ʟᴇᴀᴠᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ๏\n  ๛ /leave <group/chat id>\n  ๛ /leave ➛ Type in the Group bot will auto leave that group""",
             parse_mode=ParseMode.MARKDOWN,
             
             reply_markup=InlineKeyboardMarkup(
@@ -1044,7 +1043,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 6922271843:
+        if OWNER_ID != 6590287973:
             update.effective_message.reply_text(
                 f"๏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://github.com/noob-mukesh/nothing?)"
                 f"\n\n๏ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ᴛᴏ ᴛʜᴇ ᴩᴇʀsᴏɴ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴜɴɴɪɴɢ ᴍᴇ : [ʜᴇʀᴇ]",
@@ -1109,7 +1108,7 @@ def main():
                 caption=f"""
 ✦ㅤ{BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ✦
      ━━━━━━━━ 🝮✿🝮 ━━━━━━━━
-**❅ ᴍᴀᴅᴇ ʙʏ ➛ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/roy_editx)**
+**❅ ᴍᴀᴅᴇ ʙʏ ➛ [ʀᴏʏ-ᴇᴅɪᴛx](https://t.me/naruto_support1)**
 **❅ ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{y()}`
 **❅ ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ ➛** `{telever}`
 **❅ ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➛** `{tlhver}`
