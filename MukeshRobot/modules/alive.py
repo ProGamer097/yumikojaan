@@ -50,10 +50,9 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.2)
     await m.reply_photo(
         random.choice(MISHI),
-        caption=f"""** ✦ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](f"t.me/{BOT_USERNAME}") ✦**\n\n❍ **ʟɪʙʀᴀʀʏ ➛** `{lver}`\n❍ **ᴛᴇʟᴇᴛʜᴏɴ ➛** `{tver}`\n❍ **ᴘʏʀᴏɢʀᴀᴍ ➛** `{pver}`\n❍ **ᴘʏᴛʜᴏɴ ➛** `{pyver()}`\n\n❍ **ᴍᴀᴅᴇ ʙʏ ➛** [ʀᴏʏ-ᴇᴅɪᴛx](tg://user?id={OWNER_ID})""",
+        caption=f""" ✦ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](f"t.me/{BOT_USERNAME}") ✦\n\n❍ ʟɪʙʀᴀʀʏ ➛ {lver}\n❍ ᴛᴇʟᴇᴛʜᴏɴ ➛ {tver}\n❍ ᴘʏʀᴏɢʀᴀᴍ ➛ {pver}\n❍ ᴘʏᴛʜᴏɴ ➛ {pyver()}\n\n❍ ᴍᴀᴅᴇ ʙʏ ➛ [naruto_of_telegram](tg://user?id={OWNER_ID})""",
         reply_markup=InlineKeyboardMarkup(Mukesh),
-    )
-    
+)
 __mod_name__ = "ᴀʟɪᴠᴇ"
 __help__ = """
  ❍ /alive ➛ ᴄʜᴇᴄᴋ ʙᴏᴛ ᴀʟɪᴠᴇ sᴛᴀᴛᴜs.
