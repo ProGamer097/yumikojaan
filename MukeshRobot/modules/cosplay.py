@@ -14,7 +14,7 @@ from MukeshRobot import pbot as app
 @app.on_message(filters.command("cosplay"))
 async def cosplay(_,msg):
     img = requests.get("https://waifu-api.vercel.app").json()
-    await msg.reply_photo(img, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗\n\n❍ ᴄʀᴇᴅɪᴛs ʙʏ ➛ ʀᴏʏ-ᴇᴅɪᴛx")
+    await msg.reply_photo(img, caption=f"❍ ᴄᴏsᴘʟᴀʏ sung gang")
 
 @app.on_message(filters.command("ncosplay"))
 async def ncosplay(_,msg):
@@ -28,7 +28,7 @@ async def ncosplay(_,msg):
     else:
        ncosplay = requests.get("https://waifu-api.vercel.app/items/1").json()
 
-       await msg.reply_photo(ncosplay, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗\n\n❍ ᴄʀᴇᴅɪᴛs ʙʏ ➛ ʀᴏʏ-ᴇᴅɪᴛx")
+       await msg.reply_photo(ncosplay, caption=f"❍ ᴄᴏsᴘʟᴀʏ ʙʏ ➛ sung gang")
 
 
 __mod_name__ = "ᴄᴏsᴘʟᴀʏ"
