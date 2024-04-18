@@ -102,7 +102,7 @@ async def ctest(_, message):
 {N1} + {N2} = ❣️
 ➖➖➖➖➖➖➖➖➖➖➖➖
 
-HAA MERI JAAN
+pyaar me kuch ni hai soja ja kar
 ɴᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !!**
 """
     
