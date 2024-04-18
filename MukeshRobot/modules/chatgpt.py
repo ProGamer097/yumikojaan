@@ -18,7 +18,7 @@ async def chat(bot, message):
             x=response.json()["results"]
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"❍ {x}\n\n❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ ๛ᴀ ᴠ ɪ s ʜ ᴀ ༗ ", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f"❍ {x}\n\n❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ  sung gang ", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 
