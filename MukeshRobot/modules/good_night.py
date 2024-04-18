@@ -28,7 +28,7 @@ from telethon import Button
 from MukeshRobot import telethn
 from MukeshRobot.events import register
 
-PHOTO = "https://telegra.ph/file/b631c44eb975eb3640ccf.mp4"
+PHOTO = "https://telegra.ph/file/ade484ca0a3e11f62c408.mp4"
 
 
 @register(pattern=("Good night"))
