@@ -79,26 +79,18 @@ PM_START_TEXT = """
 *нєу {}, ᴡᴇʟᴄᴏᴍᴇ ʙᴀʙʏ* !\n━━━━━━━━━━━━━━━━━━━━━━\n\n❍ *ɪ ᴀᴍ {}, ᴀɴᴅ ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs.*\n❍ *ɪ ʜᴀᴠᴇ ᴍᴏsᴛ ᴘᴏᴡᴇʀғᴜʟʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ + ᴍᴜsɪᴄ ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs.*"""
 
 buttons = [
-    [
-        InlineKeyboardButton(
-            text=" ⚡️𝙃𝙄𝙅𝘼𝘾𝙆 𝙈𝙀⚡️ ", 
-            url=f"https://t.me/{dispatcher.bot.username}?startgroup=true", 
-        ),
-    ],
+        
     [
         InlineKeyboardButton(text="⛩𝘼𝘽𝙄𝙇𝙄𝙏𝙄𝙀𝙎⛩", callback_data="Main_help"),
     ],
-    [
-        InlineKeyboardButton(text="🎵𝙈𝙐𝙎𝙄𝘾🎵", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url=f"https://t.me/{SUPPORT_CHAT}"),
-    ],
+    
      
 ]
 
 
 roy = [
     [
-        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/roy_editx"),
+        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/naruto_support1"),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
