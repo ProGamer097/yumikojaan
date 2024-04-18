@@ -44,7 +44,7 @@ async def restart(client, m: Message):
     await accha.delete()
     await asyncio.sleep(0.3)
     umm = await m.reply_sticker(
-        "CAACAgUAAxkDAAJHbmLuy2NEfrfh6lZSohacEGrVjd5wAAIOBAACl42QVKnra4sdzC_uKQQ"
+        "CAACAgIAAx0CfDXFXwACizpmIN2gvtprjupdFMn_M2jPJOBjXgACfBQAAl2TAUqcozeOx4snLR4E"
     )
     await umm.delete()
     await asyncio.sleep(0.2)
