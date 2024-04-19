@@ -46,7 +46,7 @@ async def chat_gpt(event):
             await processing_message.edit(f"Unexpected error: {str(e)}. Please try again later.")
     else:
         # Provide information about the correct command format
-        await event.reply("❍ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇsᴛɪᴏɴ after /ask ᴄᴏᴍᴍᴀɴᴅ.\n\n❍ ғᴏʀ ᴇxᴀᴍᴘʟᴇ ➛ /ask ᴡʜᴀᴛ ɪs ᴛʜᴇ ᴍᴇᴀɴɪɴɢ ᴏғ ʟɪғᴇ ?")
+        await event.reply("❍ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇsᴛɪᴏɴ after /ask ᴄᴏᴍᴍᴀɴᴅ.\n\n❍ ғᴏʀ ᴇxᴀᴍᴘʟᴇ ➛ /ask ᴡʜᴀᴛ ɪs ᴛʜᴇ ᴍᴇᴀɴɪɴɢ owner ?")
 
 
 __mod_name__ = "ᴄʜᴀᴛ-ᴀɪ"
