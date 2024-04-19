@@ -2,8 +2,8 @@
 
 Copyright (c) 2023-24 Noob-Mukesh
 
-          GITHUB: NOOB-MUKESH
-          TELEGRAM: @MR_SUKKUN
+          GITHUB: soja
+          TELEGRAM: @naruto_of_telegram
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41,7 +41,7 @@ async def imagine_(b, message: Message):
     caption = f"""
 ✦ sᴜᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ✦
 
-❍ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [๛ᴀ ᴠ ɪ s ʜ ᴀ ༗](https://t.me/Avishaxbot)
+❍ **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ➛** [Naruto](https://t.me/naruto_support1)
 ❍ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➛** {message.from_user.mention}
 """
     await m.delete()
