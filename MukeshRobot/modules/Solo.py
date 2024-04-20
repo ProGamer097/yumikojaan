@@ -1,6 +1,7 @@
 import MukeshRobot
 import random
 import telegrambot
+pip install python-telegram-bot
 
 TOKEN = '7135306288:AAFkD9E8lcuGCDRuGNi_-Ig5lG0r5kK4vBM'
 bot = telegrambot.TelegramBot(TOKEN)
