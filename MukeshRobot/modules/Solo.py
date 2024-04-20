@@ -2,7 +2,7 @@ import MukeshRobot
 import random
 
 TOKEN = '7135306288:AAFkD9E8lcuGCDRuGNi_-Ig5lG0r5kK4vBM'
-bot = telegrambot.TeleBot(TOKEN)
+bot = telegrambot.TelegramBot(TOKEN)
 
 # Dictionary to store player information
 players = {}
