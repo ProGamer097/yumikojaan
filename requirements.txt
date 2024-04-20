@@ -46,7 +46,6 @@ telegraph==2.2.0
 telethon==1.33.1
 tgcrypto==1.2.5
 wikipedia==1.4.0
-# update modules extra
 gtts
 heroku3==5.2.1
 alphabet_detector
@@ -62,4 +61,3 @@ git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
 unidecode
 openai==1.10.0
 numpy==1.26.3
-python-telegram-bot==13.7
