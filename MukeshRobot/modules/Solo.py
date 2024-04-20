@@ -1,10 +1,9 @@
-import MukeshRobot
-import MukeshRobot
 import random
-from telegram import Bot
-
+from telegram.ext import Updater, CommandHandler
+import MukeshRobot
 TOKEN = '7135306288:AAFkD9E8lcuGCDRuGNi_-Ig5lG0r5kK4vBM'
-bot = Bot(TOKEN)
+updater = Updater(token=TOKEN, use_context=True)
+dispatcher = updater.dispatcher
 
 # Your other code here...
 
@@ -55,17 +54,19 @@ potion_store = {
 }
 
 # Exploration function
-def explore(player_id):
+def explore(update, context):
+    player_id = update.message.from_user.id
     monster = Monster('Random Monster')
-    bot.send_message(player_id, f"A wild {monster.name} appears!")
-    bot.send_message(player_id, "What will you do?")
-    bot.send_message(player_id, "/fight - Fight the monster\n/run - Run away")
+    context.bot.send_message(player_id, f"A wild {monster.name} appears!")
+    context.bot.send_message(player_id, "What will you do?")
+    context.bot.send_message(player_id, "/fight - Fight the monster\n/run - Run away")
 
 # Fight function
-def fight(player_id):
+def fight(update, context):
+    player_id = update.message.from_user.id
     player = players[player_id]['character']
     monster = Monster('Random Monster')
-    bot.send_message(player_id, f"You and the {monster.name} engage in battle!")
+    context.bot.send_message(player_id, f"You and the {monster.name} engage in battle!")
     # Calculate damage based on player level and magic power
     player_damage = (player.level * 10) + player.magic_power
     monster_damage = random.randint(10, 30)
@@ -81,27 +82,26 @@ def fight(player_id):
         player.health -= monster_damage
     # Determine winner
     if player.health <= 0:
-        bot.send_message(player_id, "You were defeated!")
+        context.bot.send_message(player_id, "You were defeated!")
     else:
-        bot.send_message(player_id, "Congratulations! You defeated the monster!")
+        context.bot.send_message(player_id, "Congratulations! You defeated the monster!")
         tokens_reward = random.randint(600, 700)
         players[player_id]['inventory'].tokens += tokens_reward
         player.level += 1
-        bot.send_message(player_id, f"You earned {tokens_reward} tokens and leveled up! Your new level is {player.level}.")
+        context.bot.send_message(player_id, f"You earned {tokens_reward} tokens and leveled up! Your new level is {player.level}.")
         # Give mystery box
-        mystery_box(player_id)
+        mystery_box(player_id, context)
 
 # Mystery box function
-def mystery_box(player_id):
+def mystery_box(player_id, context):
     keys = ['low level cave key', 'medium level cave key', 'hard level cave key']
     random_key = random.choice(keys)
-    bot.send_message(player_id, f"You found a mystery box and got a {random_key}!")
+    context.bot.send_message(player_id, f"You found a mystery box and got a {random_key}!")
     players[player_id]['inventory'].mystery_box_key = random_key
 
 # Inventory command
-@bot.message_handler(commands=['inventory'])
-def inventory_command(message):
-    player_id = message.from_user.id
+def inventory_command(update, context):
+    player_id = update.message.from_user.id
     if player_id in players and players[player_id]['character']:
         inventory = players[player_id]['inventory']
         reply = f"Tokens: {inventory.tokens}\n"
@@ -111,30 +111,15 @@ def inventory_command(message):
         reply += "Weapons:\n"  # Correct indentation here
         for weapon_id, weapon_info in inventory.weapons.items():
             reply += f"{weapon_id}: {weapon_info['name']} (Type: {weapon_info['type']}, Attack: +{weapon_info['attack']}, Rank: {weapon_info['rank']})\n"
-        bot.send_message(player_id, reply)
+        context.bot.send_message(player_id, reply)
     else:
-        bot.send_message(player_id, "You must choose a character first! Use /start to begin.")
+        context.bot.send_message(player_id, "You must choose a character first! Use /start to begin.")
 
+# Register command handlers
+dispatcher.add_handler(CommandHandler('explore', explore))
+dispatcher.add_handler(CommandHandler('fight', fight))
+dispatcher.add_handler(CommandHandler('inventory', inventory_command))
 
-# Potion store command
-@bot.message_handler(commands=['potionStore'])
-def potion_store_command(message):
-    player_id = message.from_user.id
-    if player_id in players and players[player_id]['character']:
-        bot.send_message(player_id, "Welcome to the Potion Store!")
-        reply = "Available potions:\n"
-        for potion, info in potion_store.items():
-            reply += f"{info['name']} - Price: {info['price']} tokens\n"
-        bot.send_message(player_id, reply)
-    else:
-        bot.send_message(player_id, "You must choose a character first! Use /start to begin.")
-
-# Weapon store command
-@bot.message_handler(commands=['weaponStore'])
-def weapon_store_command(message):
-    player_id = message.from_user.id
-    if player_id in players and players[player_id]['character']:
-        bot.send_message(player_id, "Welcome to the Weapon Store!")
-        reply = "Available weapons:\n"
-        for weapon_id, info in weapon_store.items():
-            reply += f"{weapon_id}: {info['name']} (" 
+# Start the bot
+updater.start_polling()
+updater.idle()
