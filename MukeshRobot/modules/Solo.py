@@ -104,13 +104,13 @@ def inventory_command(message):
         reply += "Potions:\n"
         for potion, quantity in inventory.potions.items():
             reply += f"{potion.capitalize()}: {quantity}\n"
-
-reply += "Weapons:\n"
+        reply += "Weapons:\n"  # Correct indentation here
         for weapon_id, weapon_info in inventory.weapons.items():
             reply += f"{weapon_id}: {weapon_info['name']} (Type: {weapon_info['type']}, Attack: +{weapon_info['attack']}, Rank: {weapon_info['rank']})\n"
         bot.send_message(player_id, reply)
     else:
         bot.send_message(player_id, "You must choose a character first! Use /start to begin.")
+
 
 # Potion store command
 @bot.message_handler(commands=['potionStore'])
