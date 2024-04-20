@@ -133,4 +133,4 @@ def weapon_store_command(message):
         bot.send_message(player_id, "Welcome to the Weapon Store!")
         reply = "Available weapons:\n"
         for weapon_id, info in weapon_store.items():
-            reply += f"{weapon_id}: {info['name']} (
+            reply += f"{weapon_id}: {info['name']} ("
