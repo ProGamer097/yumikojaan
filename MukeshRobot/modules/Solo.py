@@ -1,5 +1,6 @@
 import random
 from telegram.ext import Updater, CommandHandler
+from telegram.error import Unauthorized  # Import Unauthorized error
 import MukeshRobot
 TOKEN = '7135306288:AAGWeXVNNHiRnwVDtnrfytXyFWOqe3rxSKM'
 updater = Updater(token=TOKEN, use_context=True)
@@ -103,6 +104,6 @@ dispatcher.add_handler(CommandHandler('inventory', inventory_command))
 try:
     updater.start_polling()
     updater.idle()
-except Conflict:
-    print("Another instance of the bot is already running.")
-        
+except Unauthorized as e:  # Handle Unauthorized error
+    print("Unauthorized error:", e)
+                                              
