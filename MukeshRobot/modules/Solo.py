@@ -1,8 +1,7 @@
 import random
 from telegram.ext import Updater, CommandHandler
 import MukeshRobot
-
-TOKEN = '7135306288:AAFkD9E8lcuGCDRuGNi_-Ig5lG0r5kK4vBM'
+TOKEN = '7135306288:AAGWeXVNNHiRnwVDtnrfytXyFWOqe3rxSKM'
 updater = Updater(token=TOKEN, use_context=True)
 dispatcher = updater.dispatcher
 
@@ -32,27 +31,6 @@ class Inventory:
         self.tokens = tokens
         self.potions = potions
         self.weapons = weapons
-
-# Character store
-character_store = {
-    'joohee': Character('Joohee', skills=['magic', 'sword'], magic_power=50),
-    # Add more characters here if needed
-}
-
-# Weapon store
-weapon_store = {
-    1: {'name': "KASAMA'S VENOM FANG", 'type': 'DAGGER', 'attack': 25, 'rank': 'C'},
-    2: {'name': 'NIGHT KILLER', 'type': 'DAGGER', 'attack': 75, 'rank': 'B'},
-    3: {'name': "BATUKA'S DAGGER", 'type': 'DAGGER', 'attack': 110, 'rank': 'A'},
-    4: {'name': "DEMON KING'S LONGSWORD", 'type': 'LONGSWORD', 'attack': 350, 'rank': 'S'},
-}
-
-# Potion store
-potion_store = {
-    'strength': {'name': 'Strength Potion', 'price': 500},
-    'health': {'name': 'Health Potion', 'price': 600},
-    'speed': {'name': 'Speed Potion', 'price': 450},
-}
 
 # Exploration function
 def explore(update, context):
@@ -122,5 +100,9 @@ dispatcher.add_handler(CommandHandler('fight', fight))
 dispatcher.add_handler(CommandHandler('inventory', inventory_command))
 
 # Start the bot
-updater.start_polling()
-updater.idle()
+try:
+    updater.start_polling()
+    updater.idle()
+except Conflict:
+    print("Another instance of the bot is already running.")
+        
