@@ -3,7 +3,7 @@ import MukeshRobot
 import random
 from telegram import Bot
 
-TOKEN = 'your_bot_token_here'
+TOKEN = '7135306288:AAFkD9E8lcuGCDRuGNi_-Ig5lG0r5kK4vBM'
 bot = Bot(TOKEN)
 
 # Your other code here...
