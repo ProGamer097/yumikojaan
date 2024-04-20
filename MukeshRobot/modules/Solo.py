@@ -1,7 +1,6 @@
 import MukeshRobot
 import random
 import telegrambot
-pip install python-telegram-bot
 
 TOKEN = '7135306288:AAFkD9E8lcuGCDRuGNi_-Ig5lG0r5kK4vBM'
 bot = telegrambot.TelegramBot(TOKEN)
@@ -11,7 +10,7 @@ players = {}
 
 # Character class
 class Character:
-    def init(self, name, level=1, skills=['magic', 'sword'], magic_power=0):
+    def __init__(self, name, level=1, skills=['magic', 'sword'], magic_power=0):
         self.name = name
         self.level = level
         self.skills = skills
@@ -20,13 +19,13 @@ class Character:
 
 # Monster class
 class Monster:
-    def init(self, name, health=100):
+    def __init__(self, name, health=100):
         self.name = name
         self.health = health
 
 # Inventory class
 class Inventory:
-    def init(self, tokens=0, potions={'strength': 0, 'health': 0, 'speed': 0}, weapons={}):
+    def __init__(self, tokens=0, potions={'strength': 0, 'health': 0, 'speed': 0}, weapons={}):
         self.tokens = tokens
         self.potions = potions
         self.weapons = weapons
@@ -135,4 +134,4 @@ def weapon_store_command(message):
         bot.send_message(player_id, "Welcome to the Weapon Store!")
         reply = "Available weapons:\n"
         for weapon_id, info in weapon_store.items():
-            reply += f"{weapon_id}: {info['name']} ("
+            reply += f"{weapon_id}: {info['name']} (" 
