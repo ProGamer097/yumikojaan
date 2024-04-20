@@ -62,3 +62,4 @@ git+https://github.com/Awesome-RJ/GoGoAnimeAPI.git
 unidecode
 openai==1.10.0
 numpy==1.26.3
+python-telegram-bot==13.7
