@@ -229,27 +229,27 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="🚑 Support",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
+                                url="https://t.me/naruto_support1",
                             ),
                             InlineKeyboardButton(
                                 text="🔔 Updates",
-                                url="https://t.me/OnePunchUpdates",
+                                url="https://t.me/naruto_support1",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="🧾 Getting Started",
-                                url="https://t.me/OnePunchUpdates/29",
+                                url="https://t.me/naruto_support1",
                             ),
                             InlineKeyboardButton(
-                                text="🗄 lund lega",
-                                url="https://github.com/AnimeKaizoku/SaitamaRobot",
+                                text="🗄 sojao",
+                                url="https://t.me/naruto_support1",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="☠️ Naruto giveawayl",
-                                url="https://t.me/Kaizoku/4",
+                                url="https://t.me/naruto_support1",
                             ),
                         ],
                     ],
