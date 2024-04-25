@@ -7,7 +7,6 @@ from MukeshRobot import (
     ALLOW_EXCL,
     LOGGER,
     OWNER_ID,
-    PORT = 8443,
     TOKEN,
     URL,
     WEBHOOK,
@@ -17,6 +16,8 @@ from MukeshRobot import (
     telethn,
     updater,
 )
+
+PORT = 8443  # Assign PORT value outside of the import statement
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -41,6 +42,8 @@ from telegram.ext import (
 )
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
+
+# Rest of your code...
 
 
 def get_readable_time(seconds: int) -> str:
