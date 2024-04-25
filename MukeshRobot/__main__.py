@@ -6,7 +6,6 @@ from typing import Optional
 
 from MukeshRobot import (
     ALLOW_EXCL,
-    CERT_PATH,
     DONATION_LINK,
     LOGGER,
     OWNER_ID,
@@ -18,7 +17,8 @@ from MukeshRobot import (
     dispatcher,
     StartTime,
     telethn,
-    updater)
+    updater,
+)
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -78,8 +78,7 @@ Built by weebs for weebs, I specialize in managing anime eccentric communities!
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
-the things I can help you with.
+I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of the things I can help you with.
 
 *Main* commands available:
  • /help: PM's you this message.
@@ -583,110 +582,52 @@ def donate(update: Update, context: CallbackContext):
     bot = context.bot
     if chat.type == "private":
         update.effective_message.reply_text(
-            DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,
+            DONATE_STRING.format(bot.get_me().username),
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
         )
-
-        if OWNER_ID != 254318997 and DONATION_LINK:
-            update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
-                parse_mode=ParseMode.MARKDOWN,
-            )
-
     else:
-        try:
-            bot.send_message(
-                user.id,
-                DONATE_STRING,
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
-            )
-
-            update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!",
-            )
-        except Unauthorized:
-            update.effective_message.reply_text(
-                "Contact me in PM first to get donation information.",
-            )
-
-
-def migrate_chats(update: Update, context: CallbackContext):
-    msg = update.effective_message  # type: Optional[Message]
-    if msg.migrate_to_chat_id:
-        old_chat = update.effective_chat.id
-        new_chat = msg.migrate_to_chat_id
-    elif msg.migrate_from_chat_id:
-        old_chat = msg.migrate_from_chat_id
-        new_chat = update.effective_chat.id
-    else:
-        return
-
-    LOGGER.info("Migrating from %s, to %s", str(old_chat), str(new_chat))
-    for mod in MIGRATEABLE:
-        mod.__migrate__(old_chat, new_chat)
-
-    LOGGER.info("Successfully migrated!")
-    raise DispatcherHandlerStop
+        update.effective_message.reply_text(
+            "Contact me in PM for donation info.",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="💰 Donate",
+                            url="t.me/{}?start=donate".format(bot.username),
+                        ),
+                    ],
+                ],
+            ),
+        )
 
 
 def main():
+    for mod in ALL_MODULES:
+        imported_module = importlib.import_module("MukeshRobot.modules." + mod)
 
-    if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
-        try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I am now online!")
-        except Unauthorized:
-            LOGGER.warning(
-                "Bot isnt able to send message to support_chat, go and check!",
-            )
-        except BadRequest as e:
-            LOGGER.warning(e.message)
-
-    test_handler = CommandHandler("test", test)
-    start_handler = CommandHandler("start", start)
-
-    help_handler = CommandHandler("help", get_help)
-    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
-
-    settings_handler = CommandHandler("settings", get_settings)
-    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
-
-    donate_handler = CommandHandler("donate", donate)
-    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
-
-    # dispatcher.add_handler(test_handler)
-    dispatcher.add_handler(start_handler)
-    dispatcher.add_handler(help_handler)
-    dispatcher.add_handler(settings_handler)
-    dispatcher.add_handler(help_callback_handler)
-    dispatcher.add_handler(settings_callback_handler)
-    dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(donate_handler)
-
+    # start help listener
+    dispatcher.add_handler(CommandHandler("help", get_help))
+    # inline buttons
+    dispatcher.add_handler(CallbackQueryHandler(help_button, pattern="^help_.*"))
+    # start listener
+    dispatcher.add_handler(CommandHandler("start", start, run_async=True))
+    # test listener
+    dispatcher.add_handler(CommandHandler("test", test, run_async=True))
+    # donate listener
+    dispatcher.add_handler(CommandHandler("donate", donate, run_async=True))
+    # listener for settings
+    dispatcher.add_handler(CommandHandler("settings", get_settings, run_async=True))
+    dispatcher.add_handler(
+        CallbackQueryHandler(settings_button, pattern="^stngs_.*", run_async=True),
+    )
+    # log all errors
     dispatcher.add_error_handler(error_callback)
 
-    if WEBHOOK:
-        LOGGER.info("Using webhooks.")
-        updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
-
-        if CERT_PATH:
-            updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
-        else:
-            updater.bot.set_webhook(url=URL + TOKEN)
-
-    else:
-        LOGGER.info("Using long polling.")
-        updater.start_polling(timeout=15, read_latency=4, clean=True)
-
-    if len(argv) not in (1, 3, 4):
-        telethn.disconnect()
-    else:
-        telethn.run_until_disconnected()
+    updater.start_polling()
 
     updater.idle()
 
 
 if __name__ == "__main__":
-    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
-    telethn.start(bot_token=TOKEN)
     main()
