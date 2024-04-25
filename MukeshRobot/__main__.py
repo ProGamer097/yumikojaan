@@ -1,12 +1,10 @@
 import importlib
 import time
 import re
-from sys import argv
 from typing import Optional
 
 from MukeshRobot import (
     ALLOW_EXCL,
-    DONATION_LINK,
     LOGGER,
     OWNER_ID,
     PORT,
@@ -83,7 +81,6 @@ I'm a Hero For Fun and help admins manage their groups with One Punch! Have a lo
 *Main* commands available:
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
@@ -97,12 +94,6 @@ And the following:
 )
 
 SAITAMA_IMG = "https://graph.org//file/6a4454814f56d9555ecdd.mp4"
-
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](ko-fi.com/sawada) or by contacting @Naruto
- _of_telegram\
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at @ushioDev."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -618,15 +609,19 @@ def main():
     dispatcher.add_handler(CommandHandler("donate", donate, run_async=True))
     # listener for settings
     dispatcher.add_handler(CommandHandler("settings", get_settings, run_async=True))
+    # button for settings
     dispatcher.add_handler(
-        CallbackQueryHandler(settings_button, pattern="^stngs_.*", run_async=True),
+        CallbackQueryHandler(settings_button, pattern="^stngs_.*"),
     )
-    # log all errors
     dispatcher.add_error_handler(error_callback)
 
+    # set bot instance to NONE to disable set commands
+    context.bot = None
+
+    # Finally start the bot
     updater.start_polling()
 
-    updater.idle()
+    LOGGER.info("Bot started! Have fun!")
 
 
 if __name__ == "__main__":
