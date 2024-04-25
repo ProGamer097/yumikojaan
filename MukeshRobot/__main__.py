@@ -97,7 +97,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
+SAITAMA_IMG = "https://graph.org//file/6a4454814f56d9555ecdd.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project via [Paypal](ko-fi.com/sawada) or by contacting @Naruto
@@ -116,7 +116,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("SaitamaRobot.modules." + module_name)
+    imported_module = importlib.import_module("MukeshRobot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -242,13 +242,13 @@ def start(update: Update, context: CallbackContext):
                                 url="https://t.me/OnePunchUpdates/29",
                             ),
                             InlineKeyboardButton(
-                                text="🗄 Source code",
+                                text="🗄 lund lega",
                                 url="https://github.com/AnimeKaizoku/SaitamaRobot",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="☠️ Kaizoku Network",
+                                text="☠️ Naruto giveawayl",
                                 url="https://t.me/Kaizoku/4",
                             ),
                         ],
